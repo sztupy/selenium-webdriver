@@ -87,7 +87,7 @@ module Selenium
           chrome_options['binary']                   = Chrome.path if Chrome.path
           chrome_options['nativeEvents']             = true if native_events
           chrome_options['verbose']                  = true if verbose
-          chrome_options['detach']                   = detach.nil? || !!detach
+          chrome_options['detach']                   = detach.nil? || !!detach  unless detach == :unspecified
           chrome_options['noWebsiteTestingDefaults'] = true if no_website_testing_defaults
 
           caps['chromeOptions'] = chrome_options
